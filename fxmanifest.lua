@@ -1,4 +1,3 @@
----@diagnostic disable: undefined-global
 --[[ FX INFORMATION ]]--
 fx_version                  'cerulean'
 games                       { 'gta5' }
