@@ -8,14 +8,16 @@ VP_Input = lib.class('VP_Input')
 ---@param heading string
 ---@param rows table
 ---@return table|nil
-function VP_Input:init(heading, rows)
+function VP_Input:constructor(heading, rows, cb)
     -- Using a compatible menu option that isn't ox
-    if (shared_config.Menu ~= 'ox' and Framework.GetFramework() ~= 'esx') then
-        return Framework.ShowInput(heading, rows)
+    if (shared_config.Input ~= 'ox' and Framework.GetFramework() ~= 'esx') then
+        cb(Framework.ShowInput(heading, rows))
+        return
     end
 
     -- use ox
-    return lib.inputDialog(heading, rows)
+    cb(lib.inputDialog(heading, rows))
+    return
 end
 
 --* Related Events
@@ -24,3 +26,5 @@ RegisterNetEvent('vp_adminmenu:client:displayMenu', function(data)
         data = data
     })
 end)
+
+return VP_Input
