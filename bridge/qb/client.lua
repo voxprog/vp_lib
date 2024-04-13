@@ -67,10 +67,16 @@ function Framework.ShowInput(heading, rows)
             end
         end
     end
-    return exports['qb-input']:ShowInput({
+    local retVal = exports['qb-input']:ShowInput({
         heading = heading,
         inputs = inputs
     })
+
+    local newTable = {}
+    for k,v in pairs(retVal) do
+        newTable[tonumber(k)] = v
+    end
+    return newTable
 end
 
 function Framework.GetPlayerGang()
