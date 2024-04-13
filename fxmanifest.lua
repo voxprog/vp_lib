@@ -11,7 +11,6 @@ version                     '1.0.0'
 
 --[[ MANIFEST ]]--
 dependencies                { 'ox_lib' }
-client_scripts              { 'client/VP_Input.lua', 'client/VP_Menu.lua' }
 shared_scripts              { '@ox_lib/init.lua', 'config/shared.lua' }
 files                       {
     'config/shared.lua',
@@ -21,4 +20,6 @@ files                       {
     'bridge/qb/server.lua',
     'bridge/esx/client.lua',
     'bridge/esx/server.lua',
+    'client/VP_Input.lua',
+    'client/VP_Menu.lua',
 }
