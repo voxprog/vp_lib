@@ -18,7 +18,7 @@ VP_Menu = lib.class('VP_Menu')
         },
     }
 ]]
-function VP_Menu:init(data)
+function VP_Menu:constructor(data)
     -- Using a compatible menu option that isn't ox
     if (shared_config.Menu ~= 'ox' and Framework.GetFramework() ~= 'esx') then
         Framework.ShowMenu(data)
@@ -50,3 +50,5 @@ end
 RegisterNetEvent('vp_adminmenu:client:displayMenu', function(data)
     VP_Menu:new(data)
 end)
+
+return VP_Menu
